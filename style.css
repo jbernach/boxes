@@ -2,4 +2,14 @@
     width: 10px;
     height: 10px;
     background-color: green;
+    border: 1px solid lightgreen;
+    margin: 1px;    
+}
+
+#box-pool {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;    
+    border: 1px solid lightgray;
 }
