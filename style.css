@@ -10,7 +10,11 @@
 
 .box[data-opened=true] {
     background-color: gray;
-    cursor: default;
+    cursor: default;    
+}
+
+.box[data-opened=true][data-content=legendary]{    
+    background-color: gold;
 }
 
 #box-pool {
