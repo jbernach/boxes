@@ -42,13 +42,25 @@ function createBox() {
 }
 
 function assignContent() {
-    const legendary = 0.002;
+    const special = 2.7168/100.0;
+    const superspecial = 1.2069/100.0;
+    const epic = 0.5472/100.0;
+    const mythical = 0.2496/100.0;
+    const legendary = 0.0768/100.0;
+    
     const r = Math.random();
 
     if (r <= legendary) {
         return 'legendary';
+    } else if (r <= mythical) {
+        return 'mythical';
+    } else if (r <= epic) {
+        return 'epic';
+    } else if (r <= superspecial) {
+        return 'superspecial';
+    } else if (r <= special) {
+        return 'special';
     }
-
     
     return 'nothing';
 }

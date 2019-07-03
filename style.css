@@ -1,6 +1,6 @@
 .box {
-    width: 15px;
-    height: 15px;
+    width: 1%;
+    height: 2%;
     background-color: green;
     border: 1px solid lightgreen;
     margin: 1px;
@@ -13,14 +13,41 @@
     cursor: default;    
 }
 
+.box[data-opened=true][data-content=special]{    
+    background-color: chartreuse;
+}
+
+.box[data-opened=true][data-content=superspecial]{    
+    background-color: dodgerblue;
+}
+
+.box[data-opened=true][data-content=epic]{    
+    background-color: deeppink;
+}
+
+.box[data-opened=true][data-content=mythical]{    
+    background-color: red;
+}
+
 .box[data-opened=true][data-content=legendary]{    
-    background-color: gold;
+    background-color: yellow;
 }
 
 #box-pool {
-    width: 100%;
-    height: auto;
+    width: 1000px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid lightgray;
+    align-items: center;
+}
+
+.legend {
+    margin: 20px;
+    display: flex;
+}
+
+.legend .box {
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
 }
