@@ -1,15 +1,22 @@
 .box {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: green;
     border: 1px solid lightgreen;
-    margin: 1px;    
+    margin: 1px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.box[data-opened=true] {
+    background-color: gray;
+    cursor: default;
 }
 
 #box-pool {
     width: 100%;
     height: auto;
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     border: 1px solid lightgray;
 }
