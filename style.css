@@ -33,7 +33,7 @@ h2 {
     align-items: center;
 }
 
-#prices {
+#prizes {
     width: 25%;    
 }
 
@@ -70,7 +70,7 @@ h2 {
     cursor: default;    
 }
 
-.box[data-opened=true][data-price=nothing] {    
+.box[data-opened=true][data-prize=nothing] {    
     opacity: 0;
 }
 

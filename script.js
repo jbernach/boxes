@@ -101,6 +101,14 @@ const probabilities = {
     'legendary': 0.0768/100.0
 };
 
+const revealSounds = {
+    'special': new Audio('sounds/reveal_special.mp3'),
+    'superspecial': new Audio('sounds/reveal_superspecial.mp3'),
+    'epic': new Audio('sounds/reveal_epic.mp3'),
+    'mythical': new Audio('sounds/reveal_mythical.mp3'),
+    'legendary': new Audio('sounds/reveal_legendary.mp3')    
+};
+
 var achieved = [];
 var placedInBox = [];
 
@@ -132,11 +140,11 @@ function createBox() {
     const newBox = document.createElement('div');
     newBox.className = 'box';
     newBox.setAttribute('data-opened', 'false');
-    var price = assignBrawler();
-    newBox.setAttribute('data-price', price);
+    var prize = assignBrawler();
+    newBox.setAttribute('data-prize', prize);
 
-    if (price !== 'nothing') {
-        var b = getBrawlerById(price);
+    if (prize !== 'nothing') {
+        var b = getBrawlerById(prize);
         newBox.setAttribute('data-quality', b.quality);
     }
     
@@ -181,18 +189,20 @@ function openBox(box) {
     } else {
         box.setAttribute('data-opened', 'true');
 
-        var price = box.getAttribute('data-price');
+        var prize = box.getAttribute('data-prize');
 
-        if (price !== 'nothing') {
-            var b = getBrawlerById(price);
+        if (prize !== 'nothing') {
+            var b = getBrawlerById(prize);
 
-            const priceElement = document.createElement('div');
-            priceElement.className = 'brawler ' + price;
-            priceElement.innerText = b.name;
-            priceElement.style.backgroundImage = "url('img/" + price + ".png')";
-            document.getElementById('prices').appendChild(priceElement);
+            revealSounds[b.quality].play();
 
-            box.style.backgroundImage = priceElement.style.backgroundImage;
+            const prizeElement = document.createElement('div');
+            prizeElement.className = 'brawler ' + prize;
+            prizeElement.innerText = b.name;
+            prizeElement.style.backgroundImage = "url('img/" + prize + ".png')";
+            document.getElementById('prizes').appendChild(prizeElement);
+
+            box.style.backgroundImage = prizeElement.style.backgroundImage;
         }
     }
 }
