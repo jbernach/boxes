@@ -103,3 +103,9 @@ h2 {
     background-position-x: center;
     filter: drop-shadow(2px 4px 6px black);
 }
+
+/** image preloading */
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content:url('img/barley.png') url('img/bg.jpg') url('img/bibi.png') url('img/box.png') url('img/carl.png') url('img/crow.png') url('img/darryl.png') url('img/elprimo.png') url('img/frank.png') url('img/gene.png') url('img/leon.png') url('img/logo.png') url('img/mortis.png') url('img/pam.png') url('img/penny.png') url('img/piper.png') url('img/poco.png') url('img/rico.png') url('img/rosa.png') url('img/spike.png') url('img/tara.png');
+ }
