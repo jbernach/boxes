@@ -52,10 +52,15 @@ h2 {
     cursor: pointer;
 }
 
-.box[data-opened=true] {
-    background-color: gray;
+.box[data-opened=true] {    
     cursor: default;    
 }
+
+.box[data-opened=true][data-price=nothing] {    
+    opacity: 0;
+}
+
+
 
 .box[data-opened=true][data-quality=special]{    
     background-color: chartreuse;
