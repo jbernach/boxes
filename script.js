@@ -2,94 +2,94 @@ const numBoxes = 2000;
 
 const availableBrawlers = [
     {
+        id: 'elprimo',
         name: 'EL PRIMO',
-        quality: 'special',
-        resource: 'img/elprimo.png'
+        quality: 'special'
     },
     {
+        id: 'barley',
         name: 'BARLEY',
-        quality: 'special',
-        resource: 'img/barley.png'
+        quality: 'special'        
     },
     {
+        id: 'poco',
         name: 'POCO',
-        quality: 'special',
-        resource: 'img/poco.png'
+        quality: 'special',        
     },
     {
+        id: 'rosa',
         name: 'ROSA',
-        quality: 'special',
-        resource: 'img/rosa.png'
+        quality: 'special'
     },
     {
+        id: 'rico',
         name: 'RICO',
-        quality: 'superspecial',
-        resource: 'img/rico.png'
+        quality: 'superspecial'
     },
     {
+        id: 'darryl',
         name: 'DARRYL',
-        quality: 'superspecial',
-        resource: 'img/darryl.png'
+        quality: 'superspecial'
     },
     {
+        id: 'penny',
         name: 'PENNY',
-        quality: 'superspecial',
-        resource: 'img/penny.png'
+        quality: 'superspecial'
     },
     {
+        id: 'carl',
         name: 'CARL',
-        quality: 'superspecial',
-        resource: 'img/carl.png'
+        quality: 'superspecial'
     },
     {
+        id: 'piper',
         name: 'PIPER',
-        quality: 'epic',
-        resource: 'img/piper.png'
+        quality: 'epic'
     },
     {
+        id: 'pam',
         name: 'PAM',
-        quality: 'epic',
-        resource: 'img/pam.png'
+        quality: 'epic'
     },
     {
+        id: 'frank',
         name: 'FRANK',
-        quality: 'epic',
-        resource: 'img/frank.png'
+        quality: 'epic'
     },
     {
+        id: 'bibi',
         name: 'BIBI',
-        quality: 'epic',
-        resource: 'img/bibi.png'
+        quality: 'epic'
     },
     {
+        id: 'mortis',
         name: 'MORTIS',
-        quality: 'mythical',
-        resource: 'img/mortis.png'
+        quality: 'mythical'
     },
     {
-        name: 'GENIO',
-        quality: 'mythical',
-        resource: 'img/genio.png'
+        id: 'gene',
+        name: 'GENE',
+        quality: 'mythical'
     },
     {
+        id: 'tara',
         name: 'TARA',
-        quality: 'mythical',
-        resource: 'img/tara.png'
+        quality: 'mythical'
     },
     {
+        id: 'spike',
         name: 'SPIKE',
-        quality: 'legendary',
-        resource: 'img/spike.png'
+        quality: 'legendary'
     },
     {
+        id: 'crow',
         name: 'CROW',
-        quality: 'legendary',
-        resource: 'img/crow.png'
+        quality: 'legendary'
     },
     {
+        id: 'leon',
         name: 'LEON',
-        quality: 'legendary',
-        resource: 'img/leon.png'
+        quality: 'legendary'
     }    
 ];
 
@@ -136,7 +136,7 @@ function createBox() {
     newBox.setAttribute('data-price', price);
 
     if (price !== 'nothing') {
-        var b = getBrawlerByName(price);
+        var b = getBrawlerById(price);
         newBox.setAttribute('data-quality', b.quality);
     }
     
@@ -151,13 +151,13 @@ function assignBrawler() {
     for (var i = 0; i < availableBrawlers.length; i++) {
         var b = availableBrawlers[i];
 
-        if (placedInBox.indexOf(b.name) === -1) {
+        if (placedInBox.indexOf(b.id) === -1) {
             var r = Math.random();
             var prob = probabilities[b.quality];
 
             if (r <= prob) {
-                placedInBox.push(b.name);
-                return b.name;
+                placedInBox.push(b.id);
+                return b.id;
             }
         }
     }
@@ -165,9 +165,9 @@ function assignBrawler() {
     return 'nothing';
 }
 
-function getBrawlerByName(name) {
+function getBrawlerById(id) {
     for (var i = 0; i < availableBrawlers.length; i++) {
-        if (availableBrawlers[i].name === name) {
+        if (availableBrawlers[i].id === id) {
             return availableBrawlers[i];
         }
     }
@@ -184,10 +184,10 @@ function openBox(box) {
         var price = box.getAttribute('data-price');
 
         if (price !== 'nothing') {
-            var b = getBrawlerByName(price);
+            var b = getBrawlerById(price);
 
             const priceElement = document.createElement('div');
-            priceElement.className = 'brawler';
+            priceElement.className = 'brawler ' + price;
             priceElement.innerText = b.name;
             document.getElementById('prices').appendChild(priceElement);
         }
