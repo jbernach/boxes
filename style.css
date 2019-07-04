@@ -49,6 +49,7 @@ h2 {
     margin-left: 10px;
     margin-right: 4px;
     background-image: none;
+    animation: none !important;
 }
 
 .box {
@@ -59,11 +60,11 @@ h2 {
     background-repeat: no-repeat;
     background-position-x: center;
     margin: 5px;
-    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.4s linear;
     cursor: pointer;
     filter: drop-shadow(2px 4px 6px black);
     border-radius: 5px;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;    
 }
 
 .box[data-opened=true] {    
@@ -76,22 +77,27 @@ h2 {
 
 .box[data-opened=true][data-quality=special]{    
     background-color: chartreuse;
+    animation: rotate-scale-up 0.65s linear both;
 }
 
 .box[data-opened=true][data-quality=superspecial]{    
     background-color: dodgerblue;
+    animation: rotate-scale-up 0.65s linear both;
 }
 
 .box[data-opened=true][data-quality=epic]{    
     background-color: deeppink;
+    animation: rotate-scale-up 4.65s linear both;
 }
 
 .box[data-opened=true][data-quality=mythical]{    
     background-color: red;
+    animation: rotate-scale-up 1.65s linear both;
 }
 
 .box[data-opened=true][data-quality=legendary]{    
     background-color: yellow;
+    animation: rotate-scale-up 7.65s linear both;
 }
 
 .brawler {
@@ -109,3 +115,18 @@ body::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
     content:url('img/barley.png') url('img/bg.jpg') url('img/bibi.png') url('img/box.png') url('img/carl.png') url('img/crow.png') url('img/darryl.png') url('img/elprimo.png') url('img/frank.png') url('img/gene.png') url('img/leon.png') url('img/logo.png') url('img/mortis.png') url('img/pam.png') url('img/penny.png') url('img/piper.png') url('img/poco.png') url('img/rico.png') url('img/rosa.png') url('img/spike.png') url('img/tara.png');
  }
+
+ @keyframes rotate-scale-up {
+    0% {
+      transform: scale(1) rotateZ(0);
+      z-index: 10;
+    }
+    50% {
+      transform: scale(8) rotateZ(180deg);
+      z-index: 10;
+    }
+    100% {
+      transform: scale(1) rotateZ(360deg);
+      z-index: 10;
+    }
+  }
