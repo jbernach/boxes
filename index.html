@@ -9,11 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="createBoxes()">
-    <h1>Open box simulator</h1>
-    
-    <h2>Select a box from the pool</h2>
+<body onload="createBoxes()">        
+    <h1>
+        <img class="logo" src="img/logo.png"/>
+        Brawl Starts boxes!
+    </h1>
+        
     <div id="main-layout">
+        <h2 style="flex-grow: 8">Select a box to open</h2>
+        <h2 style="flex-grow: 1">Brawlers won</h2>
         <div id="box-pool">
         </div>
         <div id="prices">
