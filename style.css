@@ -45,11 +45,15 @@ h2 {
 .box {
     width: 35px;
     height: 35px;
-    background-color: green;
-    border: 1px solid lightgreen;
+    background: url(img/box.png);
+    background-size: cover;    
+    background-repeat: no-repeat;
+    background-position-x: center;
     margin: 5px;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
 }
 
 .box[data-opened=true] {    
@@ -59,8 +63,6 @@ h2 {
 .box[data-opened=true][data-price=nothing] {    
     opacity: 0;
 }
-
-
 
 .box[data-opened=true][data-quality=special]{    
     background-color: chartreuse;
@@ -83,10 +85,11 @@ h2 {
 }
 
 .brawler {
-    margin: 5px;
+    margin: 15px;
     width: 100%;
     height: 150px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
+    filter: drop-shadow(2px 4px 6px black);
 }

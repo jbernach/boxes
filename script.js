@@ -191,6 +191,8 @@ function openBox(box) {
             priceElement.innerText = b.name;
             priceElement.style.backgroundImage = "url('img/" + price + ".png')";
             document.getElementById('prices').appendChild(priceElement);
+
+            box.style.backgroundImage = priceElement.style.backgroundImage;
         }
     }
 }
