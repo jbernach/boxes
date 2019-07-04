@@ -1,6 +1,6 @@
 .box {
-    width: 1%;
-    height: 2%;
+    width: 20px;
+    height: 20px;
     background-color: green;
     border: 1px solid lightgreen;
     margin: 1px;
@@ -13,41 +13,55 @@
     cursor: default;    
 }
 
-.box[data-opened=true][data-content=special]{    
+.box[data-opened=true][data-quality=special]{    
     background-color: chartreuse;
 }
 
-.box[data-opened=true][data-content=superspecial]{    
+.box[data-opened=true][data-quality=superspecial]{    
     background-color: dodgerblue;
 }
 
-.box[data-opened=true][data-content=epic]{    
+.box[data-opened=true][data-quality=epic]{    
     background-color: deeppink;
 }
 
-.box[data-opened=true][data-content=mythical]{    
+.box[data-opened=true][data-quality=mythical]{    
     background-color: red;
 }
 
-.box[data-opened=true][data-content=legendary]{    
+.box[data-opened=true][data-quality=legendary]{    
     background-color: yellow;
 }
 
+#main-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 #box-pool {
-    width: 1000px;
-    height: 500px;
+    width: 80%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.legend {
-    margin: 20px;
-    display: flex;
+#prices {
+    width: 20%;    
 }
 
-.legend .box {
-    width: 10px;
-    height: 10px;
+#legend {    
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+
+#legend .box {
+    width: 20px;
+    height: 20px;
     margin-left: 10px;
+    margin-right: 4px;
 }

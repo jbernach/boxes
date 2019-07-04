@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="createBoxes()">
-    <h1>Open box simulator</h1>    
-    <h2>Select a box from the pool</h2>
-    <div id="box-pool">
-    </div>    
-    <div class="legend">
-        <b>Legend:</b>
-        <div class="box" data-opened="true" data-content="special"></div>special
-        <div class="box" data-opened="true" data-content="superspecial"></div>superspecial
-        <div class="box" data-opened="true" data-content="epic"></div>epic
-        <div class="box" data-opened="true" data-content="mythical"></div>mythical
-        <div class="box" data-opened="true" data-content="legendary"></div>legendary
-    </div>
+    <h1>Open box simulator</h1>
     
+    <h2>Select a box from the pool</h2>
+    <div id="main-layout">
+        <div id="box-pool">
+        </div>
+        <div id="prices">
 
+        </div>
+        <div id="legend">
+            <b>Legend:</b>
+            <div class="box" data-opened="true" data-quality="special"></div>special
+            <div class="box" data-opened="true" data-quality="superspecial"></div>superspecial
+            <div class="box" data-opened="true" data-quality="epic"></div>epic
+            <div class="box" data-opened="true" data-quality="mythical"></div>mythical
+            <div class="box" data-opened="true" data-quality="legendary"></div>legendary
+        </div>
+    </div>
 </body>
 </html>
