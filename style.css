@@ -1,36 +1,5 @@
-.box {
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    border: 1px solid lightgreen;
-    margin: 1px;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    cursor: pointer;
-}
-
-.box[data-opened=true] {
-    background-color: gray;
-    cursor: default;    
-}
-
-.box[data-opened=true][data-quality=special]{    
-    background-color: chartreuse;
-}
-
-.box[data-opened=true][data-quality=superspecial]{    
-    background-color: dodgerblue;
-}
-
-.box[data-opened=true][data-quality=epic]{    
-    background-color: deeppink;
-}
-
-.box[data-opened=true][data-quality=mythical]{    
-    background-color: red;
-}
-
-.box[data-opened=true][data-quality=legendary]{    
-    background-color: yellow;
+body {
+    font-family: 'Lilita One', cursive;
 }
 
 #main-layout {
@@ -60,8 +29,45 @@
 }
 
 #legend .box {
-    width: 20px;
-    height: 20px;
     margin-left: 10px;
     margin-right: 4px;
+}
+
+.box {
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    border: 1px solid lightgreen;
+    margin: 5px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.box[data-opened=true] {
+    background-color: gray;
+    cursor: default;    
+}
+
+.box[data-opened=true][data-quality=special]{    
+    background-color: chartreuse;
+}
+
+.box[data-opened=true][data-quality=superspecial]{    
+    background-color: dodgerblue;
+}
+
+.box[data-opened=true][data-quality=epic]{    
+    background-color: deeppink;
+}
+
+.box[data-opened=true][data-quality=mythical]{    
+    background-color: red;
+}
+
+.box[data-opened=true][data-quality=legendary]{    
+    background-color: yellow;
+}
+
+.brawler {
+    margin: 5px;
 }

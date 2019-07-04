@@ -187,6 +187,7 @@ function openBox(box) {
             var b = getBrawlerByName(price);
 
             const priceElement = document.createElement('div');
+            priceElement.className = 'brawler';
             priceElement.innerText = b.name;
             document.getElementById('prices').appendChild(priceElement);
         }
