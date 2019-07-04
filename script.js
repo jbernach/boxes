@@ -189,6 +189,7 @@ function openBox(box) {
             const priceElement = document.createElement('div');
             priceElement.className = 'brawler ' + price;
             priceElement.innerText = b.name;
+            priceElement.style.backgroundImage = "url('img/" + price + ".png')";
             document.getElementById('prices').appendChild(priceElement);
         }
     }
