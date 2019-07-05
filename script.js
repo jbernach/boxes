@@ -1,5 +1,3 @@
-const numBoxes = 2000;
-
 const availableBrawlers = [
     {
         id: 'elprimo',
@@ -112,7 +110,7 @@ const revealSounds = {
 var achieved = [];
 var placedInBox = [];
 
-function createBoxes() {
+function createBoxes(numBoxes) {
     console.log('Creating ' + numBoxes + ' boxes...');
 
     const container = document.getElementById('box-pool');

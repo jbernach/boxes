@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="createBoxes()">        
+<body onload="createBoxes(250)">        
     <h1>
         <img class="logo" src="img/logo.png"/>
         Brawl Stars boxes!
@@ -23,6 +23,7 @@
         <div id="prizes">
 
         </div>
+        <a onclick="createBoxes(250)">Get more boxes!</a>
         <div id="legend">
             <b>Legend:</b>
             <div class="box" data-opened="true" data-quality="special"></div>special

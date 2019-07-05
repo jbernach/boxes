@@ -25,6 +25,14 @@ h2 {
     font-weight: lighter;
 }
 
+a {
+    width: 70%;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    margin: 40px 0px 40px 5px;
+}
+
 #box-pool {
     width: 70%;
     height: auto;
